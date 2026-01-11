@@ -35,4 +35,3 @@ while True:
                 continue
             else:
                 print("Resposta invalida!")
-        case 5:

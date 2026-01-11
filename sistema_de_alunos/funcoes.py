@@ -46,12 +46,9 @@ def buscar_aluno():
 
 def remover_aluno():
     try:
-        posicao_nome = alunos_cadastrado.index(input("Digite o nome do aluno que deseja remover: "))
-        posicao_idade = posicao_nome + 1
-        posicao_nota = posicao_idade + 1
-        del alunos_cadastrado[posicao_nome]
-        del alunos_cadastrado[posicao_idade]
-        del alunos_cadastrado[posicao_nota] 
+        posicao_inicio = alunos_cadastrado.index(input("Digite o nome do aluno que deseja remover: "))
+        posicao_fim = posicao_inicio + 2
+        del alunos_cadastrado[posicao_inicio:posicao_fim]
         segundos = 0
         while True:
             sys.stdout.write('\rCarregando.')
@@ -70,4 +67,3 @@ def remover_aluno():
         sys.stdout.flush()
     except ValueError:
         print("Erro. Aluno Não encontrado!")
-    
