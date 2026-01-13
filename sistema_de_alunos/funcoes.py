@@ -1,5 +1,6 @@
 import time
 import sys
+import uuid
 from listas_de_alunos import alunos_cadastrado
 
 def adicionar_aluno():
@@ -14,9 +15,13 @@ def adicionar_aluno():
                 print("Erro!: Valor deve ser escrito entre 0 e 10.")
         except ValueError:
             print("Erro!: Valor digitado invalido.")
-    alunos_cadastrado.append(nome)
-    alunos_cadastrado.append(idade)
-    alunos_cadastrado.append(nota)
+    novos_alunos = {
+        "id": uuid.uuid4(),
+        "nome": nome,
+        "idade": idade,
+        "nota": nota
+    }
+    alunos_cadastrado.append(novos_alunos)
     segundos = 0
     while True:
         sys.stdout.write('\rCarregando.')
@@ -67,3 +72,14 @@ def remover_aluno():
         sys.stdout.flush()
     except ValueError:
         print("Erro. Aluno Não encontrado!")
+def media_geral():
+    try:
+        notas_alunos = [novos_alunos["nota"] for novos_alunos in alunos_cadastrado]
+        soma = sum(notas_alunos)
+        media = soma / len(notas_alunos)
+        print(f"A media geral das notas é {media}")
+        time.sleep(2.0)
+        sair = int(input("Digite 0 para voltar a tela de menu."))
+    except ZeroDivisionError:
+        print("Erro. Lista está vazia!")
+        time.sleep(1.5)

@@ -1,3 +1,1 @@
-alunos_cadastrado = {
-    "nome": " ", "idade": " ", "nota": " " 
-}
+alunos_cadastrado = []

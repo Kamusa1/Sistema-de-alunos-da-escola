@@ -35,3 +35,10 @@ while True:
                 continue
             else:
                 print("Resposta invalida!")
+        case 5:
+            funcoes.media_geral()
+        case 6:
+            print("Fechando...")
+            break
+        case _:
+            print("Comando não reconhecido!")
