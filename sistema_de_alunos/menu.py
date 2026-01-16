@@ -28,7 +28,7 @@ while True:
                 print("Resposta invalida!")
         case 4:
             funcoes.remover_aluno()
-            decisao = input("Deseja remover mais algum aluno?\n Y - Sim\nN - Não(retorna a tela do menu)\n:")
+            decisao = input("Deseja remover algum aluno?\n Y - Sim\nN - Não(retorna a tela do menu)\n:")
             if decisao == "y":
                 funcoes.remover_aluno()
             elif decisao == "n":
