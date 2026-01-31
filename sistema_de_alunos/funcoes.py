@@ -3,7 +3,6 @@ import sys
 import uuid
 from InquirerPy import inquirer
 from listas import alunos_cadastrado
-import sqlite3
 def adicionar_aluno():
     nome = input("Digite o nome do aluno: ")
     idade = int(input("Digite a idade do aluno: "))
