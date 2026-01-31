@@ -1,7 +1,7 @@
 import time
 import sys
 import uuid
-from listas_de_alunos import alunos_cadastrado
+from listas import alunos_cadastrado
 
 def adicionar_aluno():
     nome = input("Digite o nome do aluno: ")
